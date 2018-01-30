@@ -4,3 +4,113 @@
   Theme Author URI: https://childressagency.com
   Version: 2.0
 */
+
+body{
+  font-size:14px;
+  color:#193560;
+  font-family:"Open Sans", sans-serif;
+}
+
+a{
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+
+.masthead{
+  background-color:#f59120;
+  padding-top:5px;
+  padding-bottom:5px;
+  height:38px;
+}
+.masthead>.container-fluid{
+  position:relative;
+  text-align:center;
+}
+.masthead .get-a-quote{
+  display:inline-block;
+  position:absolute;
+  padding:9px 10px;
+  background-color:#067cbf;
+  color:#fff;
+  top:-5px;
+  width:112px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform:uppercase;
+}
+.masthead .get-a-quote:hover,
+.masthead .get-a-quote:focus{
+  background-color:#193560;
+  text-decoration:none;
+}
+.masthead .contact-info{
+  float:left;
+  color:#fff;
+  text-align:left;
+  text-transform:uppercase;
+}
+.masthead .contact-info .location{
+  display:inline-block;
+  padding-right:15px;
+  vertical-align:middle;
+}
+.masthead .contact-info .location>p{
+  margin-bottom:0;
+  line-height:1;
+}
+.masthead .contact-info .phone{
+  display:inline-block;
+  padding-left:15px;
+  border-left:1px solid #fff;
+  vertical-align:middle;
+}
+.masthead .contact-info .phone>a{
+  color:#fff;
+  font-size:17px;
+  font-weight:600;
+}
+.masthead .contact-info .phone>a:hover,
+.masthead .contact-info .phone>a:focus{
+  color:#193560;
+  text-decoration:none;
+}
+.masthead .social{
+  float:right;
+}
+.masthead .social>a{
+  color:#193560;
+  font-size:20px;
+  padding:0px 5px;
+}
+.masthead .social>a:hover,
+.masthead .social>a:focus{
+  color:#fff;
+}
+
+.carousel-fade .carousel-inner .item{
+  -webkit-transition:opacity .3s ease;
+  transition:opacity .3s ease;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right{
+  opacity:0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right{
+  opacity:1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right{
+  left:0;
+  -webkit-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+}
+.carousel-fade .carousel-control{
+  z-index:2;
+}
