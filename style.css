@@ -293,6 +293,7 @@ h1{
 #main>.container{
   max-width:850px;
   box-shadow:0px 0px 10px #999;
+  padding-bottom:25px;
 }
 #main .gallery-caption h2{
   font-size:18px;
@@ -607,6 +608,50 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
   text-transform:uppercase;
 }
 
+#main .contact-item{
+  font-weight:600;
+  padding-left:40px;
+  position:relative;
+  line-height:1.2em;
+  margin-bottom:45px;
+}
+#main .contact-item:before{
+  content:"";
+  position:absolute;
+  background-image:url(images/sprites.png);
+  background-repeat:no-repeat;
+  left:0;
+}
+#main #address:before{
+  background-position:0px -71px;
+  height:23px;
+  width:16px;
+  top:3px;
+}
+#main #phone:before{
+  background-position:-75px -72px;
+  height:27px;
+  width:14px;
+  top:-5px;
+}
+#main #email:before{
+  background-position:-46px -72px;
+  height:18px;
+  width:22px;
+}
+#main #hours:before{
+  background-position:-20px -71px;
+  height:30px;
+  width:21px;
+  top:-8px;
+}
+#main #print:before{
+  background-position:0px -108px;
+  height:25px;
+  width:24px;
+  top:-4px;
+}
+
 footer{
   box-shadow:0px 0px 10px #666;
 }
@@ -663,6 +708,8 @@ footer{
   box-shadow:0px 0px 10px #666;
   padding-top:15px;
   padding-bottom:25px;
+  position:relative;
+  z-index:3;
 }
 #footer-bottom .footer-logo>img{
   float:left;
