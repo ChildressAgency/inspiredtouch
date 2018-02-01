@@ -205,6 +205,11 @@ h1{
   height:0;
 }
 
+#hero{
+  min-height:350px;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
 #hero.hp-hero{
   margin-top:38px;
   position:relative;
@@ -278,38 +283,38 @@ h1{
   z-index:9;
 }
 
-#products-gallery{
+#main{
   background-image:url(images/hex-bg.jpg);
   background-repeat:no-repeat;
   background-size:cover;
   padding-top:60px;
   padding-bottom:100px;
 }
-#products-gallery>.container{
+#main>.container{
   max-width:850px;
   box-shadow:0px 0px 10px #999;
 }
-#products-gallery .gallery-caption h2{
+#main .gallery-caption h2{
   font-size:18px;
   text-transform:uppercase;
   font-weight:700;
 }
-#products-gallery .gallery-nav ul>li{
+#main .gallery-nav ul>li{
   margin-bottom:15px;
 }
-#products-gallery .gallery-nav ul>li>a{
+#main .gallery-nav ul>li>a{
   font-size:18px;
   text-transform:uppercase;
   font-weight:700;
   color:#193560;
 }
-#products-gallery .gallery-nav ul>li>a:hover,
-#products-gallery .gallery-nav ul>li>a:focus,
+#main .gallery-nav ul>li>a:hover,
+#main .gallery-nav ul>li>a:focus,
 #products-gallery .gallery-nav ul>li.active>a{
   color:#067cbf;
   text-decoration:none;
 }
-#products-gallery .gallery-nav .btn-main{
+#main .gallery-nav .btn-main{
   display:block;
   width:155px;
 }
@@ -557,6 +562,49 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
 #blog .read-more:focus{
   color:#193560;
   text-decoration:none;
+}
+
+#our-mission{
+  background-color:#f59120;
+  padding-top:60px;
+  padding-bottom:100px;
+  text-align:center;
+  box-shadow:0px 0px 10px #666;
+  position:relative;
+  z-index:2;
+}
+#our-mission>.container{
+  max-width:850px;
+}
+#our-mission p{
+  color:#fff;
+  font-size:24px;
+}
+
+#our-process{
+  background-image:url(images/rollers.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+}
+#our-process .col-sm-7{
+  background-color:rgba(25,53,96,.6);
+  padding-top:25px;
+  padding-bottom:40px;
+}
+#our-process article{
+  color:#fff;
+  max-width:550px;
+  text-align:right;
+}
+#our-process article h1{
+  text-align:right;
+}
+#our-process article h3{
+  font-size:16px;
+  font-weight:600;
+  color:#f59120;
+  text-transform:uppercase;
 }
 
 footer{
