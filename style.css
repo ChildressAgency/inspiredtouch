@@ -315,10 +315,15 @@ h1{
   padding-top:60px;
   padding-bottom:100px;
 }
-#main.in-a-box>.container{
+.shadow-box{
   max-width:850px;
-  box-shadow:0px 0px 10px #999;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:2px 2px 10px #666;
   padding-bottom:25px;
+}
+.shadow-box.narrow{
+  max-width:675px;
 }
 #main .gallery-caption h2{
   font-size:18px;
@@ -519,10 +524,6 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
   padding-top:60px;
   padding-bottom:100px;
 }
-#blog .container{
-  max-width:675px;
-  box-shadow:0px 0px 10px #666;
-}
 #blog .our-blog{
   margin-bottom:25px;
 }
@@ -678,10 +679,6 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
 }
 
 .faq{
-  max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
-  box-shadow:2px 2px 10px #666;
   padding:15px 9%;
   margin-top:25px;
 }
@@ -744,6 +741,34 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
 .pager li>a:hover,
 .pager li>a:focus{
   color:#193560;
+}
+
+#interactive-map{
+  position:relative;
+  max-width:771px;
+}
+#map-nav>ul>li{
+  margin-bottom:5px;
+}
+#map-nav>ul>li>a{
+  font-size:18px;
+  text-transform:uppercase;
+  color:#193560;
+  font-weight:700;
+}
+#map-nav>ul>li>a:hover,
+#map-nav>ul>li>a:focus{
+  color:#067cbf;
+  text-decoration:none;
+}
+.sign-info>h3{
+  font-size:18px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.view-examples{
+  color:#067cbf;
+  font-weight:700;
 }
 
 footer{
