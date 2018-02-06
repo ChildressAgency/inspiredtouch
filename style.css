@@ -770,6 +770,20 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
   color:#067cbf;
   font-weight:700;
 }
+.sign-example{
+  max-width:310px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+}
+.sign-example h4{
+  color:#fff;
+  font-size:14px;
+  text-transform:uppercase;
+  background-color:#067cbf;
+  margin:0px;
+  padding:10px;
+}
 
 footer{
   box-shadow:0px 0px 10px #666;
