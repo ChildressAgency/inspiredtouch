@@ -333,27 +333,27 @@ h3{
 .shadow-box.narrow{
   max-width:675px;
 }
-#main .gallery-caption h2{
+#products-gallery .gallery-caption h2{
   font-size:18px;
   text-transform:uppercase;
   font-weight:700;
 }
-#main .gallery-nav ul>li{
+#products-gallery .gallery-nav ul>li{
   margin-bottom:15px;
 }
-#main .gallery-nav ul>li>a{
+#products-gallery .gallery-nav ul>li>a{
   font-size:18px;
   text-transform:uppercase;
   font-weight:700;
   color:#193560;
 }
-#main .gallery-nav ul>li>a:hover,
-#main .gallery-nav ul>li>a:focus,
+#products-gallery .gallery-nav ul>li>a:hover,
+#products-gallery .gallery-nav ul>li>a:focus,
 #products-gallery .gallery-nav ul>li.active>a{
   color:#067cbf;
   text-decoration:none;
 }
-#main .gallery-nav .btn-main{
+#products-gallery .gallery-nav .btn-main{
   display:block;
   width:155px;
 }
@@ -871,6 +871,93 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
 .fade-in-up{
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+
+#testimonial-carousel{
+  margin-top:40px;
+}
+#testimonial-carousel .carousel-inner{
+  padding-bottom:40px;
+}
+#testimonial-carousel .testimonial-wrapper{
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+  border:6px solid #c9c9c9;
+  padding:20px;
+  position:relative;
+}
+.carousel-control.left,
+.carousel-control.right{
+  background-image:none;
+  color:#193560;
+}
+#testimonial-carousel .testimonial{
+  font-size:18px;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:600;
+  padding-left:60px;
+  padding-right:60px;
+  position:relative;
+}
+#testimonial-carousel .testimonial:before{
+  content:"";
+  position:absolute;
+  height:38px;
+  width:53px;
+  background-image:url(images/sprites.png);
+  background-repeat:no-repeat;
+  background-position:-35px -104px;
+  left:0;
+  top:0;
+}
+#testimonial-carousel .testimonial:after{
+  content:"";
+  position:absolute;
+  height:38px;
+  width:53px;
+  background-image:url(images/sprites.png);
+  background-repeat:no-repeat;
+  background-position:-35px -145px;
+  right:0;
+  top:0;
+}
+#testimonial-carousel .testimonial-footer{
+  position:absolute;
+  bottom:-30px;
+  left:0;
+  right:0;
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#193560;
+}
+#testimonial-carousel .testimonial-footer>p{
+  text-align:center;
+  margin-bottom:0;
+}
+#testimonial-carousel .testimonial-footer>.testimonial-author{
+  color:#0c7dbf;
+}
+#testimonial-carousel .testimonial-footer>.testimonial-author-company{
+  color:#fff;
+}
+
+#main #products-gallery.recent-work-gallery{
+  margin-top:100px;
+}
+
+#on-the-map{
+  margin-top:60px;
+}
+#on-the-map h2{
+  color:#f59120;
+  text-transform:uppercase;
+  text-align:center;
+}
+#on-the-map p{
+  text-align:center;
 }
 
 footer{
