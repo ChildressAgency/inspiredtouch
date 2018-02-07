@@ -485,8 +485,8 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
   font-weight:600;
 }
 #work-feedback .carousel-fade .carousel-inner .item{
-  -webkit-transition:opacity 0s linear;
-  transition:opacity 0s linear;
+  -webkit-transition:opacity .2s linear;
+  transition:opacity .2s linear;
 }
 
 #stay-connected{
