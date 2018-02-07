@@ -23,6 +23,14 @@ h1{
   font-weight:700;
   margin-bottom:25px;
 }
+h2{
+  font-size:24px;
+  font-weight:600;
+}
+h3{
+  font-size:18px;
+  font-weight:600;
+}
 
 .btn-main{
   display:inline-block;
@@ -785,6 +793,86 @@ input[type="radio"]:checked + .wpcf7-list-item-label:before{
   padding:10px;
 }
 
+.sign-types{
+  margin-top:40px;
+  margin-bottom:40px;
+  max-width:800px;
+}
+.sign-types ul>li{
+  padding-top:15px;
+  padding-bottom:15px;
+}
+.sign-type{
+  max-width:390px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:25px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration:1s;
+  animation-duration:1s;
+  opacity:0;
+}
+.sign-type .title-img{
+  position:relative;
+}
+.sign-type .title-img>h3{
+  position:absolute;
+  bottom:0;
+  text-transform:uppercase;
+  color:#fff;
+  width:100%;
+  margin-top:0;
+  margin-bottom:0;
+  padding:15px;
+  background: rgba(110,178,226,0.75);
+  background: -moz-linear-gradient(left, rgba(110,178,226,0.75) 0%, rgba(6,94,166,0.75) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(110,178,226,0.75)), color-stop(100%, rgba(6,94,166,0.75)));
+  background: -webkit-linear-gradient(left, rgba(110,178,226,0.75) 0%, rgba(6,94,166,0.75) 100%);
+  background: -o-linear-gradient(left, rgba(110,178,226,0.75) 0%, rgba(6,94,166,0.75) 100%);
+  background: -ms-linear-gradient(left, rgba(110,178,226,0.75) 0%, rgba(6,94,166,0.75) 100%);
+  background: linear-gradient(to right, rgba(110,178,226,0.75) 0%, rgba(6,94,166,0.75) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6eb2e2', endColorstr='#065ea6', GradientType=1 );
+}
+.sign-description{
+  background-color:#067cbf;
+  color:#fff;
+  padding:15px;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up{
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
 footer{
   box-shadow:0px 0px 10px #666;
 }
@@ -894,7 +982,7 @@ footer{
 }
 
 
-@media (max-width:768px){
+@media (max-width:767px){
   #work-feedback .testimonial-slider{
     margin-top:25px;
   }
@@ -907,5 +995,10 @@ footer{
     float:none;
     text-align:center;
     margin-bottom:40px;
+  }
+}
+@media (min-width:768px){
+  .sign-types ul{
+    column-count:2;
   }
 }

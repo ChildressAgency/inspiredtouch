@@ -13,13 +13,25 @@ jQuery(document).ready(function(){
     }
   });    
 
-  $(window).scroll(function(){
+  $(window).on('scroll', function(){
     if($(document).scrollTop() > 15){
       $('#header-nav').addClass('scrolled');
     }
     else{
       $('#header-nav').removeClass('scrolled');
     }
+
+    $('.sign-type').each(function(){
+      var top_of_element = $(this).offset().top;
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+      if(bottom_of_window > top_of_element){
+        $(this).addClass('fade-in-up');
+      }
+      else{
+        $(this).removeClass('fade-in-up');
+      }
+    });
   });
 
   if(typeof $.fn.lightSlider == 'function'){
