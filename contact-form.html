@@ -1,0 +1,49 @@
+<section id="contact">
+  <div class="container">
+    <h1>Request A Quote</h1>
+    <div class="quote-form">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="fname" class="sr-only">First Name</label>
+            [text* fname id:fname class:form-control class:input-sm placeholder "FIRST NAME"]
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="lname" class="sr-only">Last Name</label>
+            [text* lname id:lname class:form-control class:input-sm placeholder "LAST NAME"]
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="sr-only">Email</label>
+        [email* your-email id:your-email class:form-control class:input-sm placeholder "EMAIL"]
+      </div>
+      <div class="form-group">
+        <label for="phone" class="sr-only">Phone</label>
+        [text phone id:phone class:form-control class:input-sm placeholder "PHONE"]
+      </div>
+      <div class="form-group">
+        <label for="type-of-print" class="sr-only">Type of Print</label>
+        [text type-of-print id:type-of-print class:form-control class:input-sm placeholder "TYPE OF PRINT"]
+      </div>
+
+      <div class="form-group">
+        [checkbox wrap-type "HALF" "FULL" "PARTIAL" "LETTER"]
+      </div>
+      
+      <div class="form-group">
+        <h4>BUDGET:</h4>
+        [radio budget "0-500" "500-1000" "1000-1500" "1500-2000" "2000-2500" "2500+"]
+      </div>
+      <div class="form-group">
+        <label for="message" class="sr-only">Message</label>
+        [textarea message x6 id:message class:form-control class:input-sm placeholder "MESSAGE"]
+      </div>
+      <div class="form-group text-right">
+        [submit class:btn-main "SEND"]
+      </div>
+    </div>
+  </div>
+</section>
