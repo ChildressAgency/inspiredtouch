@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
     });
   });
 
-  $('.footer-map').each(function () {
+  $('.google-map').each(function () {
     map = new_map($(this));
   });
 });

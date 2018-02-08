@@ -2,7 +2,7 @@
   <main id="main">
     <?php get_template_part('partials/products-gallery', 'content'); ?>
   </main>
-  <?php echo do_shortcode('[contact form]'); ?>
+  <?php get_template_part('partials/contact', 'content'); ?>
   <section id="work-feedback">
     <div class="container">
       <h1>Recent Work & Client Feedback</h1>

@@ -1072,6 +1072,10 @@ footer{
 	width: 100%;
 	height: 270px;
 }
+.contact-map{
+  width:100%;
+  height:340px;
+}
 
 
 @media (max-width:767px){
