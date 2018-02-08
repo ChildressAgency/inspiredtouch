@@ -1,5 +1,5 @@
 <?php
-  $products = get_field('products_gallery');
+  $products = get_field('products_gallery', 'option');
   if($products): ?>
     <section id="products-gallery">
       <div class="container shadow-box">
