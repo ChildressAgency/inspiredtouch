@@ -4,8 +4,19 @@
       <h1>Media Feed</h1>
       <div class="row">
         <?php 
-          $newest_post = new WP_Query(array('posts_per_page' => 1));
+          $post_year = get_the_date('Y');
+          $post_month = get_the_date('m');
 
+          $newest_post = new WP_Query(array(
+            'post_per_page' => 1,
+            'post_type' => 'post',
+            'date_query' => array(
+              array(
+                'year' => $post_year,
+                'month' => $post_month
+              )
+            )
+          ));
           if($newest_post->have_posts()): while($newest_post->have_posts()): $newest_post->the_post(); ?>
             <div class="col-sm-12 col-md-5 col-md-push-4">
               <div class="post">
@@ -15,8 +26,8 @@
                   <?php the_content(); ?>
                 </article>
                 <ul class="pager">
-                  <li><?php previous_post_link('%link', '<i class="fa fa-angle-left"></i>'); ?></li>
-                  <li><?php next_post_link('%link', '<i class="fa fa-angle-right"></i>'); ?></li>
+                  <li><?php previous_post_link('%link', '<i class="fa fa-angle-left"></i>', true); ?></li>
+                  <li><?php next_post_link('%link', '<i class="fa fa-angle-right"></i>', true); ?></li>
                 </ul>
               </div>
             </div>
@@ -29,11 +40,20 @@
         <?php endwhile; endif; wp_reset_postdata(); ?>
 
         <?php 
-          $other_posts = new WP_Query(array('offset' => 1, 'posts_per_page' => 7));
+          $same_month_posts = new WP_Query(array(
+            'posts_per_page' => -1,
+            'post_type' => 'post',
+            'date_query' => array(
+              array(
+                'year' => $post_year,
+                'month' => $post_month
+              )
+            )
+          ));
 
-          if($other_posts->have_post()): ?>
+          if($same_month_posts->have_post()): ?>
             <div class="recent-posts">
-              <?php while($other_posts->have_posts()): $other_posts->the_post(); ?>
+              <?php while($same_month_posts->have_posts()): $same_month_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">
                   <h3><?php the_title(); ?></h3>
                   <p class="post-date"><?php echo get_the_date('F j, Y'); ?></p>

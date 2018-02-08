@@ -3,10 +3,7 @@
     <div class="container shadow-box">
       <h1>Media Feed</h1>
       <div class="row">
-        <?php 
-          $newest_post = new WP_Query(array('posts_per_page' => 1));
-
-          if($newest_post->have_posts()): while($newest_post->have_posts()): $newest_post->the_post(); ?>
+        <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <div class="col-sm-12 col-md-5 col-md-push-4">
               <div class="post">
                 <article>
@@ -29,11 +26,11 @@
         <?php endwhile; endif; wp_reset_postdata(); ?>
 
         <?php 
-          $other_posts = new WP_Query(array('offset' => 1, 'posts_per_page' => 7));
+          $recent_posts = new WP_Query(array('posts_per_page' => 7));
 
-          if($other_posts->have_post()): ?>
+          if($recent_posts->have_post()): ?>
             <div class="recent-posts">
-              <?php while($other_posts->have_posts()): $other_posts->the_post(); ?>
+              <?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">
                   <h3><?php the_title(); ?></h3>
                   <p class="post-date"><?php echo get_the_date('F j, Y'); ?></p>

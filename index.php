@@ -1,12 +1,11 @@
 <?php get_header(); ?>
+<?php if(is_archive()): ?>
   <main id="main">
     <div class="container shadow-box">
       <h1>Media Feed</h1>
       <div class="row">
-        <?php 
-          $newest_post = new WP_Query(array('posts_per_page' => 1));
-
-          if($newest_post->have_posts()): while($newest_post->have_posts()): $newest_post->the_post(); ?>
+        <?php if(have_posts()): $r=0; while(have_posts()): the_post(); ?>
+          <?php if($r == 0): ?>
             <div class="col-sm-12 col-md-5 col-md-push-4">
               <div class="post">
                 <article>
@@ -26,14 +25,13 @@
                 if(has_post_thumbnail()){
                   the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
                 } ?>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
+          <?php endif; ?>
+        <?php $r++; endwhile; endif; wp_reset_postdata(); ?>
 
         <?php 
-          $other_posts = new WP_Query(array('offset' => 1, 'posts_per_page' => 7));
-
-          if($other_posts->have_post()): ?>
+          if(have_post()): ?>
             <div class="recent-posts">
-              <?php while($other_posts->have_posts()): $other_posts->the_post(); ?>
+              <?php while(have_posts()): the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">
                   <h3><?php the_title(); ?></h3>
                   <p class="post-date"><?php echo get_the_date('F j, Y'); ?></p>
@@ -50,4 +48,18 @@
     </div>
   </main>
   <?php get_template_part('partials/stay-connected', 'content'); ?>
+<?php else: ?>
+  <main id="main">
+    <div class="container shadow-box">
+      <?php if(have_posts()): ?>
+        <article>
+          <?php while(have_posts()): the_post(); ?>
+            <h1><?php the_title(); ?></h1>
+            <?php the_content(); ?>
+          <?php endwhile; ?>
+        </article>
+      <?php endif; ?>
+    </div>
+  </main>
+<?php endif; ?>
 <?php get_footer(); ?>
