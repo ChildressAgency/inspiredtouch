@@ -41,6 +41,14 @@ function inspiredtouch_scripts(){
     false
   );
 
+	wp_register_script(
+    'google-maps',
+    '//maps.googleapis.com/maps/api/js?key=' . get_field('google_maps_api_key', 'option'),
+    array('jquery'),
+    '',
+    false
+  );  
+
   wp_register_script(
     'inspiredtouch-scripts', 
     get_template_directory_uri() . '/js/inspiredtouch-scripts.js', 
@@ -54,6 +62,7 @@ function inspiredtouch_scripts(){
     wp_enqueue_script('lightslider');
   }
   wp_enqueue_script('fontawesome');
+  wp_enqueue_script('google-maps');
   wp_enqueue_script('inspiredtouch-scripts');  
 }
 
@@ -305,6 +314,23 @@ function inspiredtouch_header_fallback_menu(){ ?>
     </ul>
   </div>  
 <?php }
+
+function inspiredtouch_footer_fallback_menu(){ ?>
+  <nav id="footer-nav">
+    <ul class="nav navbar-nav">
+      <li><a href="<?php echo home_url('about'); ?>">About</a></li>
+      <li><a href="<?php echo home_url('sign-services'); ?>">Services</a></li>
+      <li><a href="<?php echo home_url('products'); ?>">Products</a></li>
+      <li><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
+      <li><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
+    </ul>
+  </nav>
+<?php }
+
+add_action('acf/init', 'inspiredtouch_acf_init');
+function inspiredtouch_acf_init(){
+	acf_update_setting('google_api_key', get_field('google_maps_api_key', 'option'));
+}
 
 if(function_exists('acf_add_options_page')){
   acf_add_options_page(array(
