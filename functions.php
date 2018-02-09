@@ -334,18 +334,22 @@ function inspiredtouch_acf_init(){
 
 if(function_exists('acf_add_options_page')){
   acf_add_options_page(array(
-    'page_title' => 'General Settings',
-    'menu_title' => 'General Settings',
-    'menu_slug' => 'general-settings',
+    'page_title' => 'Other Settings',
+    'menu_title' => 'Other Settings',
+    'menu_slug' => 'other-settings',
     'capability' => 'edit_posts',
     'redirect' => false
   ));
 
-  acf_add_options_page(array(
+  acf_add_options_sub_page(array(
+    'page_title' => 'General Settings',
+    'menu_title' => 'General Settings',
+    'parent_slug' => 'other-settings'
+  ));
+
+  acf_add_options_sub_page(array(
     'page_title' => 'Product Galleries',
     'menu_title' => 'Product Galleries',
-    'menu_slug' => 'general-settings',
-    'capability' => 'edit_posts',
-    'redirect' => false
+    'parent_slug' => 'other-settings'
   ));
 }
