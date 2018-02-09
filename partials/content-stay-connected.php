@@ -5,12 +5,12 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="social-feed">
-          <?php echo do_shortcode('[instagram_feed]'); ?>
+          <?php echo do_shortcode('[instagram-feed]'); ?>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="social-feed">
-          <?php echo do_shortcode('[facebook_feed]'); ?>
+          <?php echo do_shortcode('[custom-facebook-feed]'); ?>
         </div>
       </div>
     </div>

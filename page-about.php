@@ -3,7 +3,6 @@
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <div class="container shadow-box">
         <article>
-          <h1><?php the_field('page_title'); ?></h1>
           <?php the_content(); ?>
         </article>
       </div>

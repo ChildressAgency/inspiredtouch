@@ -3,7 +3,7 @@
     <div class="container shadow-box" style="max-width:unset;">
       <h1>Products</h1>
       <?php
-        $products = get_field('products', 'option'); 
+        $products = get_field('products'); 
         if($products): ?>
       <div class="row">
         <div class="col-sm-8 col-md-9">

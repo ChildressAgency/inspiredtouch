@@ -105,7 +105,7 @@
       }
       else{
         if(get_field('default_hero_image_css', 'option')){
-          $hero_image_css = get_field('default_hero_image_css');
+          $hero_image_css = get_field('default_hero_image_css', 'option');
         }
       }
     ?>
