@@ -10,7 +10,7 @@
               <?php
                 $i=0;
                 foreach($products as $product): ?>
-                  <div role="tabpanel" class="tab-pane fade<?php if($i==0){ echo ' in active'; } ?>" id="<?php echo sanitize_title($product['gallery_name']; ?>">
+                  <div role="tabpanel" class="tab-pane fade<?php if($i==0){ echo ' in active'; } ?>" id="<?php echo sanitize_title($product['gallery_name']); ?>">
                     <div class="product-gallery">
                       <?php
                         $gallery_images = $product['gallery_images'];
@@ -43,7 +43,7 @@
               <ul class="list-unstyled" role="tablist">
                 <?php $c=0; foreach($products as $product): ?>
                   <li role="presentation"<?php if($c==0){ echo ' class="active"'; } ?>>
-                    <a href="#<?php echo sanitize_title($product['gallery_name']; ?>" aria-controls="<?php echo sanitize_title($product['gallery_name']; ?>" role="tab" data-toggle="tab"><?php echo $product['gallery_name']; ?></a>
+                    <a href="#<?php echo sanitize_title($product['gallery_name']); ?>" aria-controls="<?php echo sanitize_title($product['gallery_name']); ?>" role="tab" data-toggle="tab"><?php echo $product['gallery_name']; ?></a>
                   </li>
                 <?php $c++; endforeach; ?>
               </ul>

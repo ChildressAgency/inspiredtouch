@@ -33,7 +33,6 @@
                   </div>
                 </div>
             <?php endif; ?>
-            <img src="images/map-placeholder2.jpg" class="img-responsive center-block" alt="" />
           </div>
         </div>
       </article>
