@@ -1,7 +1,7 @@
 <?php
   $products = get_field('products_gallery', 'option');
   if($products): ?>
-    <section id="products-gallery">
+    <section id="products-gallery"<?php if(is_page('testimonials')){ echo ' class="recent-work-gallery"'; } ?>>
       <div class="container shadow-box">
         <h1><?php echo is_front_page() ? 'Products' : 'Our Recent Work'; ?></h1>
         <div class="row">

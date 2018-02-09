@@ -50,7 +50,9 @@
         </div>
         <div class="col-sm-5">
           <?php
-            $testimonials = get_field('testimonials');
+            $testimonials_page = get_page_by_path('testimonials');
+            $testimonials_page_id = $testimonials_page->ID;
+            $testimonials = get_field('testimonials', $testimonials_page_id);
             array_chunk($testimonials, 3, true);
             for($i = 0; $i < 3; $i++): ?>
               <div id="testimonial-box<?php echo $i; ?>" class="testimonial-slider carousel slide carousel-fade">
