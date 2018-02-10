@@ -7,18 +7,16 @@
               <?php 
                 $location = get_field('location', 'option');
                 if(!empty($location)): ?>
-                  <div class="google-map">
-                    <div class="footer-map">
-                      <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-                        <?php if(get_field('location_image', 'option')): ?>
-                          <img src="<?php the_field('location_image', 'option'); ?>" class="" alt="" />
-                        <?php endif; ?>
-                        <div class="info-window-content">
-                          <h3>Inspired Signs & Graphics</h3>
-                          <p><?php the_field('address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></p>
-                          <p><?php the_field('phone', 'option'); ?><br /><?php the_field('email', 'option'); ?></p>
-                          <p><?php the_field('hours', 'option'); ?></p>
-                        </div>
+                  <div class="google-map footer-map">
+                    <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+                      <?php if(get_field('location_image', 'option')): ?>
+                        <img src="<?php the_field('location_image', 'option'); ?>" class="" alt="" />
+                      <?php endif; ?>
+                      <div class="info-window-content">
+                        <h3>Inspired Signs & Graphics</h3>
+                        <p><?php the_field('address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></p>
+                        <p><?php the_field('phone', 'option'); ?><br /><?php the_field('email', 'option'); ?></p>
+                        <p><?php the_field('hours', 'option'); ?></p>
                       </div>
                     </div>
                   </div>

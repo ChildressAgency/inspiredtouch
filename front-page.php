@@ -57,7 +57,7 @@
             $testimonials_count = count($testimonials);
             $chunk_size = floor($testimonials_count / 3);
             $new_testimonials = array_chunk($testimonials, $chunk_size, false);
-            var_dump($new_testimonials);
+            //var_dump($new_testimonials);
             for($i = 0; $i < 3; $i++): //var_dump($testimonials[$i]); ?>
               <div id="testimonial-box<?php echo $i; ?>" class="testimonial-slider carousel slide carousel-fade">
                 <div class="carousel-inner" role="listbox">
@@ -86,12 +86,15 @@
           <div class="col-sm-6 col-sm-push-6">
             <div class="featured-post">
               <?php
-                $blog_page = get_page_by_path('blog');
+                $blog_page = get_page_by_path('media-feed');
                 $blog_page_id = $blog_page->ID;
                 $featured_post_id = get_field('featured_post', $blog_page_id);
+                //var_dump($featured_post_id);
                 if($featured_post_id){
                   $featured_post_args = array(
-                    'p' => $featured_post_id
+                    'p' => $featured_post_id[0],
+                    'post_type' => 'post',
+                    'posts_per_page' => 1
                   );
                 }
                 else{
@@ -106,6 +109,7 @@
                   if(has_post_thumbnail()){
                     the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
                   } ?>
+                  <h3><?php the_title(); ?></h3>
                   <p class="post-date"><?php echo get_the_date('m/d/Y'); ?></p>
                   <?php the_excerpt(); ?>
                   <?php
@@ -114,7 +118,7 @@
                     }
                   ?>
                   <a href="<?php the_permalink(); ?>" class="read-more">Learn More ></a>
-              <?php endwhile; endif; ?>
+              <?php endwhile; endif; wp_reset_postdata(); ?>
             </div>
           </div>
           <div class="col-sm-6 col-sm-pull-6">

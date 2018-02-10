@@ -294,7 +294,7 @@ function inspiredtouch_header_fallback_menu(){ ?>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
       <li<?php if(is_front_page()){ echo ' class="active"'; } ?>><a href="<?php echo home_url(); ?>">Home</a></li>
-      <li<?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo home_url(); ?>">About</a></li>
+      <li<?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('about'); ?>">About</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
         <ul class="dropdown-menu">

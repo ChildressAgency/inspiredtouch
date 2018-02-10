@@ -45,22 +45,20 @@
         <?php endif; ?>
 
         <?php if(have_rows('work_locations')): ?>
-          <div class="google-map">
-            <div class="work-locations-map">
-              <?php while(have_rows('work_locations')): the_row();
-                $location = get_sub_field('location'); ?>
-                <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-                  <?php if(get_sub_field('location_image')): ?>
-                    <img src="<?php the_sub_field('location_image'); ?>" class="" alt="" />
-                  <?php endif; ?>
-                  <div class="info-window-content">
-                    <h3><?php the_sub_field('location_title'); ?></h3>
-                    <p><?php the_sub_field('location_address'); ?><br /><?php the_sub_field('location_city_state_zip'); ?></p>
-                    <p><?php the_sub_field('location_type_of_work'); ?></p>
-                  </div>
-                </div>                
-              <?php endwhile; ?>
-          </div>
+          <div class="google-map work-locations-map">
+            <?php while(have_rows('work_locations')): the_row();
+              $location = get_sub_field('location'); ?>
+              <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+                <?php if(get_sub_field('location_image')): ?>
+                  <img src="<?php the_sub_field('location_image'); ?>" class="" alt="" />
+                <?php endif; ?>
+                <div class="info-window-content">
+                  <h3><?php the_sub_field('location_title'); ?></h3>
+                  <p><?php the_sub_field('location_address'); ?><br /><?php the_sub_field('location_city_state_zip'); ?></p>
+                  <p><?php the_sub_field('location_type_of_work'); ?></p>
+                </div>
+              </div>                
+            <?php endwhile; ?>
         </div>
       </div>
     </section>

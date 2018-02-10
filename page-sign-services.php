@@ -11,7 +11,7 @@
       $sign_services = get_field('sign_services');
       if($sign_services):
         $count_sign_services = count($sign_services);
-        $halfway_point = $count_sign_services / 2;
+        $halfway_point = floor($count_sign_services / 2);
         $i=0; ?>
         <div class="container sign-types">
           <div class="row">
