@@ -1,8 +1,8 @@
 <?php get_header(); ?>
   <main id="main">
-    <?php get_template_part('partials/products-gallery', 'content'); ?>
+    <?php get_template_part('partials/content', 'products-gallery'); ?>
   </main>
-  <?php get_template_part('partials/contact', 'content'); ?>
+  <?php get_template_part('partials/content', 'contact'); ?>
   <section id="work-feedback">
     <div class="container">
       <h1>Recent Work & Client Feedback</h1>
@@ -28,7 +28,7 @@
                   <?php
                     $recent_work2 = get_field('recent_work2'); $rw2 = 0;
                     foreach($recent_work2 as $recent_work2_img): ?>
-                      <div class="item<?php if($rw2 == 0){ echo ' active'; ?>">
+                      <div class="item<?php if($rw2 == 0){ echo ' active'; } ?>">
                         <img src="<?php echo $recent_work2_img['url']; ?>" class="img-responsive center-block" alt="" />
                       </div>
                   <?php $rw2++; endforeach; ?>
@@ -41,7 +41,7 @@
               <?php
                 $recent_work_lg = get_field('recent_work_large'); $rwl = 0;
                 foreach($recent_work_lg as $recent_work_lg_img): ?>
-                  <div class="item<?php if($rwl == 0){ echo ' active'; ?>">
+                  <div class="item<?php if($rwl == 0){ echo ' active'; } ?>">
                     <img src="<?php echo $recent_work_lg_img['url']; ?>" class="img-responsive center-block" alt="" />
                   </div>
               <?php $rwl++; endforeach; ?>
@@ -53,11 +53,15 @@
             $testimonials_page = get_page_by_path('testimonials');
             $testimonials_page_id = $testimonials_page->ID;
             $testimonials = get_field('testimonials', $testimonials_page_id);
-            array_chunk($testimonials, 3, true);
-            for($i = 0; $i < 3; $i++): ?>
+            //var_dump($testimonials);
+            $testimonials_count = count($testimonials);
+            $chunk_size = floor($testimonials_count / 3);
+            $new_testimonials = array_chunk($testimonials, $chunk_size, false);
+            var_dump($new_testimonials);
+            for($i = 0; $i < 3; $i++): //var_dump($testimonials[$i]); ?>
               <div id="testimonial-box<?php echo $i; ?>" class="testimonial-slider carousel slide carousel-fade">
                 <div class="carousel-inner" role="listbox">
-                  <?php $c = 0; foreach($testimonials[$i] as $testimonial): ?>
+                  <?php $c = 0; foreach($new_testimonials[$i] as $testimonial): //var_dump($testimonial); ?>
                     <div class="item<?php if($c == 0){ echo ' active'; } ?>">
                       <?php echo $testimonial['testimonial']; ?>
                       <div class="testimonial-footer">
@@ -73,7 +77,7 @@
       </div>
     </div>
   </section>
-  <?php get_template_part('partials/stay-connected', 'content'); ?>
+  <?php get_template_part('partials/content', 'stay-connected'); ?>
   <section id="blog">
     <div class="container shadow-box narrow">
       <div class="our-blog">
@@ -110,6 +114,7 @@
                     }
                   ?>
                   <a href="<?php the_permalink(); ?>" class="read-more">Learn More ></a>
+              <?php endwhile; endif; ?>
             </div>
           </div>
           <div class="col-sm-6 col-sm-pull-6">

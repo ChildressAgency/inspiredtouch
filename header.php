@@ -33,7 +33,7 @@
           <a href="tel:<?php the_field('phone', 'option'); ?>"><?php the_field('phone', 'option'); ?></a>
         </div>
       </div>
-      <?php get_template_part('partials/social', 'content'); ?>
+      <?php get_template_part('partials/content', 'social'); ?>
     </div>
   </div>
   <nav id="header-nav" class="navbar">

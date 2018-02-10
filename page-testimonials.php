@@ -36,7 +36,7 @@
       </div>
     <?php endif; ?>
 
-    <?php get_template_part('partials/products-gallery','content'); ?>
+    <?php get_template_part('partials/content','products-gallery'); ?>
 
     <section id="on-the-map">
       <div class="container shadow-box">

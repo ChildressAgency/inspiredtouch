@@ -62,7 +62,7 @@
               wp_nav_menu($footer_nav_args); ?>
           </div>
           <div class="col-sm-3">
-            <?php get_template_part('partials/social', 'content'); ?>
+            <?php get_template_part('partials/content', 'social'); ?>
           </div>
         </div>
         <div class="copyright">

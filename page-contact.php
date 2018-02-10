@@ -38,5 +38,5 @@
       </article>
     </div>
   </main>
-  <?php get_template_part('partials/contact', 'content'); ?>
+  <?php get_template_part('partials/content', 'contact'); ?>
 <?php get_footer(); ?>

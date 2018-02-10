@@ -42,12 +42,12 @@
           </div><?php //left-sidebar ?>
         </div>
         <div class="col-sm-6 col-md-3">
-          <?php get_template_part('partials/archive-sidebar', 'content'); ?>
+          <?php get_template_part('partials/content', 'archive-sidebar'); ?>
         </div>
       </div><?php //row ?>
     </div>
   </main>
-  <?php get_template_part('partials/stay-connected', 'content'); ?>
+  <?php get_template_part('partials/content', 'stay-connected'); ?>
 <?php else: ?>
   <main id="main">
     <div class="container shadow-box">

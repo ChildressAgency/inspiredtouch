@@ -27,7 +27,7 @@ function inspiredtouch_scripts(){
 
   wp_register_script(
     'lightslider',
-    'js/lightslider.min.js',
+    get_stylesheet_directory_uri() . '/js/lightslider.min.js',
     array('jquery'),
     '',
     true
@@ -70,10 +70,12 @@ add_action('wp_enqueue_scripts', 'inspiredtouch_styles');
 function inspiredtouch_styles(){
   wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
   wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+  wp_register_style('lightslider-css', get_template_directory_uri() . '/css/lightslider.min.css');
   wp_register_style('inspiredtouch', get_template_directory_uri() . '/style.css');
   
   wp_enqueue_style('bootstrap-css');
   wp_enqueue_style('google-fonts');
+  wp_enqueue_style('lightslider-css');
   wp_enqueue_style('inspiredtouch');
 }
 
