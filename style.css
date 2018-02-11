@@ -177,7 +177,10 @@ h3{
   text-transform:uppercase;
 }
 #header-nav .navbar-nav>li>a:hover,
-#header-nav .navbar-nav>li>a:focus{
+#header-nav .navbar-nav>li>a:focus,
+#header-nav .dropdown-menu>.active>a, 
+#header-nav .dropdown-menu>.active>a:focus, 
+#header-nav .dropdown-menu>.active>a:hover{
   background-color:transparent;
   color:#f59120;
 }
