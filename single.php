@@ -28,7 +28,7 @@
         <?php 
           $recent_posts = new WP_Query(array('posts_per_page' => 7));
 
-          if($recent_posts->have_post()): ?>
+          if($recent_posts->have_posts()): ?>
             <div class="recent-posts">
               <?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">

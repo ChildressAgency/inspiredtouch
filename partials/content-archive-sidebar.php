@@ -3,7 +3,7 @@
   <?php
     global $wpdb;
     $year_prev = null;
-    $months = $wpdb=>get_results("
+    $months = $wpdb->get_results("
       SELECT DISTINCT MONTH(post_date) as month, YEAR(post_date) as year
       FROM $wpdb->posts
       WHERE post_status = 'publish'

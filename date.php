@@ -8,7 +8,7 @@
           $post_month = get_the_date('m');
 
           $newest_post = new WP_Query(array(
-            'post_per_page' => 1,
+            'posts_per_page' => 1,
             'post_type' => 'post',
             'date_query' => array(
               array(
@@ -51,7 +51,7 @@
             )
           ));
 
-          if($same_month_posts->have_post()): ?>
+          if($same_month_posts->have_posts()): ?>
             <div class="recent-posts">
               <?php while($same_month_posts->have_posts()): $same_month_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">

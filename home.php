@@ -29,9 +29,9 @@
         <?php endwhile; endif; wp_reset_postdata(); ?>
 
         <?php 
-          $other_posts = new WP_Query(array('offset' => 1, 'posts_per_page' => 7));
+          $other_posts = new WP_Query(array('offset' => 1, 'posts_per_page' => 7, 'post_type' => 'post'));
 
-          if($other_posts->have_post()): ?>
+          if($other_posts->have_posts()): ?>
             <div class="recent-posts">
               <?php while($other_posts->have_posts()): $other_posts->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="recent-post">

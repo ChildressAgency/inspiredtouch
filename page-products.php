@@ -5,38 +5,39 @@
       <?php
         $products = get_field('products'); 
         if($products): ?>
-      <div class="row">
-        <div class="col-sm-8 col-md-9">
-          <div id="interactive-map">
-            <img src="<?php the_field('interactive_image'); ?>" class="img-responsive center-block" alt="Interactive Map" />
-            <?php foreach($products as $product): ?>
-              <a href=".<?php echo sanitize_title($product['product_name']); ?>" title="<?php echo $product['product_name']; ?>" data-toggle="tab" style="position: absolute; <?php $product['position_on_interactive_image']; ?>" aria-controls="<?php echo sanitize_title($product['product_name']); ?>" role="tab"></a>
-            <?php endforeach; reset($products); ?>
-          </div>
-
-          <div class="tab-content interactive-signs-info">
-            <?php $i=0; foreach($products as $product): ?>
-              <div id="" class="tab-pane fade<?php if($i==0){ echo ' in active'; } ?> sign-info <?php echo sanitize_title($product['product_name']); ?>">
-                <h3><?php echo $product['product_name']; ?></h3>
-                <?php echo $product['product_description']; ?>
+          <div class="row">
+            <div class="col-sm-8 col-md-9">
+              <div id="interactive-map">
+                <img src="<?php the_field('interactive_image'); ?>" class="img-responsive center-block" alt="Interactive Map" />
+                <?php foreach($products as $product): ?>
+                  <a href=".<?php echo sanitize_title($product['product_name']); ?>" title="<?php echo $product['product_name']; ?>" data-toggle="tab" style="position: absolute; <?php echo $product['position_on_interactive_image']; ?>" aria-controls="<?php echo sanitize_title($product['product_name']); ?>" role="tab"></a>
+                <?php endforeach; reset($products); ?>
               </div>
-            <?php $i++; endforeach; reset($products); ?>
-          </div>
-          <p class="view-examples">View Examples Below</p>
-        </div>
 
-        <div class="col-sm-4 col-md-3">
-          <div id="map-nav">
-            <ul class="list-unstyled" role="tablist">
-              <?php foreach($products as $product): ?>
-                <li role="presentation">
-                  <a href=".<?php echo sanitize_title($product['product_name']); ?>" data-toggle="tab" role="tab"><?php echo $product['product_name']; ?></a>
-                </li>
-              <?php endforeach; reset($products); ?>
-            </ul>
+              <div class="tab-content interactive-signs-info">
+                <?php $i=0; foreach($products as $product): ?>
+                  <div id="" class="tab-pane fade<?php if($i==0){ echo ' in active'; } ?> sign-info <?php echo sanitize_title($product['product_name']); ?>">
+                    <h3><?php echo $product['product_name']; ?></h3>
+                    <?php echo $product['product_description']; ?>
+                  </div>
+                <?php $i++; endforeach; reset($products); ?>
+              </div>
+              <p class="view-examples">View Examples Below</p>
+            </div>
+
+            <div class="col-sm-4 col-md-3">
+              <div id="map-nav">
+                <ul class="list-unstyled" role="tablist">
+                  <?php foreach($products as $product): ?>
+                    <li role="presentation">
+                      <a href=".<?php echo sanitize_title($product['product_name']); ?>" data-toggle="tab" role="tab"><?php echo $product['product_name']; ?></a>
+                    </li>
+                  <?php endforeach; reset($products); ?>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
     <div class="container">
       <div class="tab-content interactive-map-examples">

@@ -1,11 +1,11 @@
 <?php
-/*
+
 add_action('wp_footer', 'show_template');
 function show_template() {
 	global $template;
 	print_r($template);
 }
-*/
+
 add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
   if(!is_admin()){
@@ -308,7 +308,7 @@ function inspiredtouch_header_fallback_menu(){ ?>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li<?php if(is_home()){ echo ' class="active"'; } ?>><a href="<?php echo home_url('blog'); ?>">Blog</a></li>
+          <li<?php if(is_home()){ echo ' class="active"'; } ?>><a href="<?php echo home_url('media-feed'); ?>">Media Feed</a></li>
           <li<?php if(is_page('faq')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('faq'); ?>">FAQ</a></li>
         </ul>
       </li>
